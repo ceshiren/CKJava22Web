@@ -24,7 +24,7 @@ public class WeWorkPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofSeconds(2));
         driver.get("https://work.weixin.qq.com/wework_admin/frame#index");
 
-        //声明要赌球的数据的类型
+        //声明要读取的数据的类型
         TypeReference<List<HashMap<String, Object>>> typeReference = new TypeReference<>() {
         };
         //读取数据并存到合适的类型里
