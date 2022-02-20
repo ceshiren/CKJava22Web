@@ -44,6 +44,6 @@ public class WeWorkPage {
     }
 
     public void close(){
-//        driver.quit();
+        driver.quit();
     }
 }
