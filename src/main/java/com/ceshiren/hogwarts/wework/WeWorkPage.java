@@ -18,7 +18,7 @@ public class WeWorkPage {
     private final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
     WebDriverWait wait;
 
-    public void login() throws IOException {
+    public WeWorkPage login() throws IOException {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofSeconds(2));
@@ -40,14 +40,10 @@ public class WeWorkPage {
                 });
         //刷新的时候，浏览器会把新的cookie带到服务器，服务器返回登录后的页面
         driver.navigate().refresh();
+        return this;
     }
 
     public void close(){
-        try {
-            Thread.sleep(60000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        driver.quit();
+//        driver.quit();
     }
 }
