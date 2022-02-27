@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.net.MalformedURLException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 class ContactAppPageTest {
@@ -19,8 +20,13 @@ class ContactAppPageTest {
         user1.setMobile(mobile);
         user1.setName(name);
 
-        UserProfile profile = wework.toContact().addMember(user1).searchMember(mobile).getProfile();
-        assertThat(profile, equalTo(user1));
+        UserProfile profile = wework
+                .toContact()
+                .addMember(user1)
+                .searchMember(mobile)
+                .getProfile();
+        assertThat(profile.name, equalTo(user1.name));
+        assertThat(profile.mail, containsString(user1.name+"@"));
     }
 
     String generateMobile() {

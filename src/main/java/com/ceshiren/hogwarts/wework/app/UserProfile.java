@@ -19,4 +19,23 @@ public class UserProfile {
 
     String name;
     String mobile;
+    String depart;
+
+    public String getDepart() {
+        return depart;
+    }
+
+    public void setDepart(String depart) {
+        this.depart = depart;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    String mail;
 }
