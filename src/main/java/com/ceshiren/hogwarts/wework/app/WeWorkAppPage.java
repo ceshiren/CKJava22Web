@@ -22,7 +22,7 @@ public class WeWorkAppPage {
         //不要重新数据化，保留登录信息
         capabilities.setCapability("noReset", true);
         driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
 

@@ -13,10 +13,10 @@ public class ContactAppPage extends BaseAppPage {
         return new MemberAppPage(driver);
     }
 
-    public MemberAppPage searchMember(String pattern) {
-        driver.findElement(By.id("kci")).click();
-        driver.findElement(By.cssSelector("android.widget.EditText")).sendKeys(pattern);
-        driver.findElement(By.id("fkc")).click();
+    public MemberAppPage searchMember(String pattern) throws Exception {
+        find(By.id("kci")).click();
+        find(By.cssSelector("android.widget.EditText")).sendKeys(pattern);
+        find(By.id("fkc")).click();
         return new MemberAppPage(driver);
     }
 

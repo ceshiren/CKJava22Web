@@ -23,6 +23,18 @@ public class BaseAppPage {
         return this;
     }
 
+    public BaseAppPage find(By by) throws Exception {
+        try {
+            currentElement = driver.findElement(by);
+        } catch (Exception e) {
+            handleExceptions();
+            //使用递归解决多次异常处理问题
+            find(by);
+        }
+        return this;
+    }
+
+
     /**
      * find 代表对控件的定位
      *
@@ -41,18 +53,28 @@ public class BaseAppPage {
             throw new Exception("unknown");
         }
         currentBy = by;
-        currentElement = driver.findElement(by);
+        find(by);
+
         return this;
     }
 
 
     public void click() {
-        currentElement.click();
+        try {
+            currentElement.click();
+        } catch (Exception e) {
+            handleExceptions();
+            click();
+        }
     }
 
-    public void click(By by) {
-        currentBy = by;
-        driver.findElement(by).click();
+    public void click(By by) throws Exception {
+        try {
+            find(by).click();
+        } catch (Exception e) {
+            handleExceptions();
+            click(by);
+        }
     }
 
     public void click(String selector, String strategy) throws Exception {
@@ -86,5 +108,9 @@ public class BaseAppPage {
      */
     public void back() {
         driver.navigate().back();
+    }
+
+    public void handleExceptions(){
+        //todo: 解决弹框和各种异常
     }
 }
