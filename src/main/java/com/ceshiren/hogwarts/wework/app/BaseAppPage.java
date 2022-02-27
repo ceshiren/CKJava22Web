@@ -112,5 +112,9 @@ public class BaseAppPage {
 
     public void handleExceptions(){
         //todo: 解决弹框和各种异常
+        //异常类型
+        //1. 行为异常，重试机制可也解决
+        //2. po实现，重试机制通常效果不大
+        //3. 全流程与环境异常 直接fail并自动启动下次执行
     }
 }
