@@ -1,4 +1,4 @@
-package com.ceshiren.hogwarts.wework;
+package com.ceshiren.hogwarts.wework.web;
 
 public class User {
     String username;

@@ -1,4 +1,4 @@
-package com.ceshiren.hogwarts.wework;
+package com.ceshiren.hogwarts.wework.web;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;

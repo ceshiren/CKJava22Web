@@ -1,5 +1,8 @@
-package com.ceshiren.hogwarts.wework;
+package com.ceshiren.hogwarts.wework.web;
 
+import com.ceshiren.hogwarts.wework.web.ContactPage;
+import com.ceshiren.hogwarts.wework.web.ProfilePage;
+import com.ceshiren.hogwarts.wework.web.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
