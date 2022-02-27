@@ -33,4 +33,8 @@ public class WeWorkAppPage {
 
         return new ContactAppPage(driver);
     }
+
+    public void close(){
+        driver.quit();
+    }
 }
