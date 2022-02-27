@@ -20,7 +20,7 @@ class ContactAppPageTest extends BaseWeWorkTestCase {
     }
 
     @Test
-    void addMember() throws MalformedURLException {
+    void addMember() throws Exception {
 
         String mobile = generateMobile();
         String name = "ckjava22_" + mobile;
