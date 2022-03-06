@@ -1,6 +1,7 @@
 package com.ceshiren.hogwarts.wework.app;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -59,7 +60,7 @@ public class BaseAppPage {
     }
 
 
-    public void click() {
+    public void click() throws Exception {
         try {
             currentElement.click();
         } catch (Exception e) {
@@ -110,11 +111,21 @@ public class BaseAppPage {
         driver.navigate().back();
     }
 
-    public void handleExceptions(){
+    public void handleExceptions() throws Exception {
         //todo: 解决弹框和各种异常
         //异常类型
-        //1. 行为异常，重试机制可也解决
+        //1. 行为异常，重试机制可也解决 广告关闭
         //2. po实现，重试机制通常效果不大
         //3. 全流程与环境异常 直接fail并自动启动下次执行
+
+        String source = driver.getPageSource();
+        if(source.contains("广告id")){
+            find("广告id").click();
+        }
+        if(!find("//*", "xpath").getAttribute("package").equals("com.tencent.wework")){
+            back();
+//            ((AndroidDriver)driver).startActivity("");
+        }
+
     }
 }

@@ -40,6 +40,7 @@ public class WeWorkPage {
                 });
         //刷新的时候，浏览器会把新的cookie带到服务器，服务器返回登录后的页面
         driver.navigate().refresh();
+        //如果cookie过期，登录不成功，抛出异常就可以了
         return this;
     }
 
